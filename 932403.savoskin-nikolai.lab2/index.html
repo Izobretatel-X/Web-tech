@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!-- Настройка кодировки документа -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Правильное отображение на мобильных устройствах -->
+
+    <title>Студент-разработчик</title> <!-- Название страницы -->
+
+    <link rel="stylesheet" = href="style.css"> <!-- Подключение CSS-файла -->
+
+    <style>
+        /* Внутреннее правило - специальное оформление поля Email */
+        #email {
+            padding: 14px;
+            border: 3px solid var(--color-border);
+            border-radius: 10px;
+            border-color: var(--color-border);
+        }
+
+        #email:focus {
+            border-color: var(--color-focus);
+        }        
+    </style>
+</head>
+
+<body>
+    <header style="padding: 20px;"> <!-- Шапка страницы -->
+        <img
+        src="images/Student_photo.jpg"
+        alt="Фото студента-разработчика"
+        width="150"
+        height="150"> <!-- Изображение студента-разработчика (меня) -->
+        
+        <h1>Савоськин Николай</h1>
+        <h2>Студент-разработчик</h2>
+    </header>
+
+    <main> <!-- Основной контент страницы -->
+        
+
+        <div class="content"> <!-- Создаём контейнеры, чтобы aside оказался сбоку -->
+            <div class="sections">
+                <section> <!-- Секция с навыками -->
+                    <h2>Навыки</h2>
+                    <div class="skills-grid"> <!-- Теперь ввиде сетки -->
+                        <div class="skill-card"> <!-- Карточка навыка -->
+                            <span class="top-badge">Top skill</span>
+                            Python
+                        </div>
+
+                        <div class="skill-card">
+                            C++
+                        </div>
+
+                        <div class="skill-card">
+                            Pascal
+                        </div>
+
+                        <div class="skill-card">
+                            HTML
+                        </div>
+                    </div>
+                </section>
+
+                <section> <!-- Секция с проектами -->
+                    <h2>Проекты</h2>
+                    <ol class="projects-list"> <!-- Класс списка проектов -->
+                        <li> <!-- Была добавлена ссылка на первый проект -->
+                            Озвученная текстовая игра по миру Backrooms, основанная на нейросети
+                            <a href="https://character.ai/chat/-Nlr2Sc0JlWuCHXOHNiTb_YbW0WyeNtAT7BxFqwSK-M" target="_blank">Character.AI</a>
+                        </li>
+                        <li>Исследование лучшего места для организации "тёмной кухни" в Томске</li>
+                        <li>Создание своей базы данных в Oracle по предметной области "Радио"</li>
+                    </ol>
+                </section>
+
+                <section> <!-- Секция с формой обратной связи -->
+                    <h2>Обратная связь</h2>
+                    <form>
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Введите ваше сообщение" required></textarea>
+
+                        <button type="submit">Отправить</button>
+                    </form>
+                </section>
+            </div>
+
+            <aside> <!-- Боковая панель -->
+                <h2>Любимые инструменты</h2>
+                <p>Visual Studio Code </p>
+                <p>Microsoft Visual Studio</p>
+                <p>Pycharm</p>
+                <p>Krita</p>
+                <p>Filmora</p>
+            </aside>
+        </div>
+        
+    </main>
+
+    <footer> <!-- Нижняя часть страницы -->
+        <p>&copy; 2026 Савоськин Николай</p>
+    </footer>
+</body>
+</html>
