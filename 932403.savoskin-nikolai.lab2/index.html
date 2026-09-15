@@ -6,94 +6,25 @@
 
     <title>Студент-разработчик</title> <!-- Название страницы -->
 
+    <link rel="stylesheet" = href="style.css"> <!-- Подключение CSS-файла -->
+
     <style>
-        body {
-            font-family: Arial, sans-serif; /*Шрифт для всего документа*/
-            margin: 0;  /*Убираем отступы по умолчанию*/
-            padding: 0; /*Убираем внутренние отступы по умолчанию*/
-            background-color: #c4c4ff; /* Цвет фона страницы */
+        /* Внутреннее правило - специальное оформление поля Email */
+        #email {
+            padding: 14px;
+            border: 3px solid var(--color-border);
+            border-radius: 10px;
+            border-color: var(--color-border);
         }
 
-        header {
-            background-color: #00008b; /* Цвет фона шапки */
-            color: white; /* Цвет текста в шапке */
-            padding: 20px; /* Внутренние отступы шапки */
-            text-align: center; /* Выравнивание текста по центру */
-        }
-
-        main {
-            padding: 20px; /* Внутренние отступы основного контента */
-            max-width: 800px; /* Максимальная ширина основного контента */
-            margin: 0 auto; /* Центрирование основного контента */
-        }
-
-        section {
-            background-color: #ffffff; /* Цвет фона секций */
-            padding: 20px; /* Внутренние отступы секций */
-            margin-bottom: 20px; /* Отступ снизу для секций */
-            border-radius: 10px; /* Скругление углов секций */
-        }
-
-        aside {
-            width: 200px; /* Ширина боковой панели */
-            background-color: #c4e8ff; /* Цвет фона боковой панели */
-            padding: 20px; /* Внутренние отступы боковой панели */
-            border-radius: 10px; /* Скругление углов боковой панели */
-        }
-
-        img {
-            display: block; /* Изображения отображаются как блочные элементы */
-            max-width: 100%; /* Ограничение ширины изображений */
-            margin: 0 auto; /* Центрирование изображений по горизонтали */
-            height: auto; /* Автоматическая высота изображений */
-            border-radius: 10px; /* Скругление углов изображений */
-        }
-
-        form {
-            background-color: #0a0457; /* Цвет фона формы */
-            color: white; /* Цвет текста формы */
-            padding: 20px; /* Внутренние отступы формы */
-            border-radius: 10px; /* Скругление углов формы */
-        }
-
-        input,
-        textarea {
-            width: 100%; /* Ширина полей ввода и текстовой области */
-            padding: 10px; /* Внутренние отступы полей ввода и текстовой области */
-            margin-top: 5px; /* Отступ сверху для полей ввода и текстовой области */
-            margin-bottom: 15px; /* Отступ снизу для полей ввода и текстовой области */
-            box-sizing: border-box; /* Учет внутренних отступов и границ при расчете ширины */
-        }
-
-        button {
-            background-color: #00008b; /* Цвет фона кнопки */
-            color: white; /* Цвет текста кнопки */
-            padding: 10px 20px; /* Внутренние отступы кнопки */
-            border: none; /* Убираем границу кнопки */
-            cursor: pointer; /* Курсор в виде руки при наведении на кнопку */
-        }
-
-        footer {
-            background-color: #00008b; /* Цвет фона нижней части страницы */
-            color: white; /* Цвет текста в подвале */
-            text-align: center; /* Выравнивание текста по центру */
-            padding: 15px; /* Внутренние отступы нижней части страницы */
-        }
-
-        .content {
-            display: flex; /* Используем Flexbox для контейнера */
-            gap: 20px; /* Расстояние между секциями и боковой панелью */
-            align-items: flex-start; /* Выравнивание элементов по верхнему краю */
-        }
-
-        .sections {
-            flex: 1; /* Секции занимают 1 часть пространства */
-        }
+        #email:focus {
+            border-color: var(--color-focus);
+        }        
     </style>
 </head>
 
 <body>
-    <header> <!-- Шапка страницы -->
+    <header style="padding: 20px;"> <!-- Шапка страницы -->
         <img
         src="images/Student_photo.jpg"
         alt="Фото студента-разработчика"
@@ -111,18 +42,33 @@
             <div class="sections">
                 <section> <!-- Секция с навыками -->
                     <h2>Навыки</h2>
-                    <ul>
-                        <li>Python</li>
-                        <li>C++</li>
-                        <li>Pascal</li>
-                        <li>HTML</li>
-                    </ul>
+                    <div class="skills-grid"> <!-- Теперь ввиде сетки -->
+                        <div class="skill-card"> <!-- Карточка навыка -->
+                            <span class="top-badge">Top skill</span>
+                            Python
+                        </div>
+
+                        <div class="skill-card">
+                            C++
+                        </div>
+
+                        <div class="skill-card">
+                            Pascal
+                        </div>
+
+                        <div class="skill-card">
+                            HTML
+                        </div>
+                    </div>
                 </section>
 
                 <section> <!-- Секция с проектами -->
                     <h2>Проекты</h2>
-                    <ol>
-                        <li>Текстовая игра по миру Backrooms, основанная на нейросети character.ai</li>
+                    <ol class="projects-list"> <!-- Класс списка проектов -->
+                        <li> <!-- Была добавлена ссылка на первый проект -->
+                            Озвученная текстовая игра по миру Backrooms, основанная на нейросети
+                            <a href="https://character.ai/chat/-Nlr2Sc0JlWuCHXOHNiTb_YbW0WyeNtAT7BxFqwSK-M" target="_blank">Character.AI</a>
+                        </li>
                         <li>Исследование лучшего места для организации "тёмной кухни" в Томске</li>
                         <li>Создание своей базы данных в Oracle по предметной области "Радио"</li>
                     </ol>
@@ -151,7 +97,7 @@
                 <p>Microsoft Visual Studio</p>
                 <p>Pycharm</p>
                 <p>Krita</p>
-                <p> Filmora</p>
+                <p>Filmora</p>
             </aside>
         </div>
         
