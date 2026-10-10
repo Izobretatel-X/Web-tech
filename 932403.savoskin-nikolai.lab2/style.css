@@ -13,7 +13,6 @@
     --font-heading: Arial, sans-serif; /*Шрифт для заголовков*/
 }
 
-
 * {
 	box-sizing: border-box;
 }
@@ -65,7 +64,7 @@ main {
     display: flex; /* Используем Flexbox для контейнера */
     gap: 20px; /* Расстояние между секциями и боковой панелью */
     align-items: flex-start; /* Выравнивание элементов по верхнему краю */
-    position: static; /* Убираем фиксированное позиционирование */
+    position: static; /* Обычное положение элемента в потоке документа */
 }
 
 .sections {
@@ -97,7 +96,6 @@ aside h2 {
 }
 
 .skill-card {
-    position: relative;
     min-height: 110px;
     display: flex;
     align-items: center;
@@ -126,11 +124,16 @@ aside h2 {
     box-shadow: 0 3px 7px #071f5273;
 }
 
+.python-card {
+    position: relative;
+}
+
 /* Стили для бейджа "Top" на карточке навыка */
 .top-badge { 
     position: absolute;
     top: 8px;
-    right: 8px;
+    left: 8px;
+    z-index: 2;
     padding: 4px 8px;
     background-color: var(--color-accent);
     color: var(--color-text-light);
@@ -260,5 +263,9 @@ footer p {
 
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    .top-badge {
+        right: 8px;
     }
 }
