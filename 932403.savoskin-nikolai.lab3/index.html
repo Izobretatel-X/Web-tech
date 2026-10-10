@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8"> <!-- Настройка кодировки документа -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Правильное отображение на мобильных устройствах -->
-
+    <meta name="description" content="Портфолио студента-разработчика: навыки, проекты и скриншоты работ."> <!--Метаописание-->
     <title>Студент-разработчик</title> <!-- Название страницы -->
 
     <link rel="stylesheet" href="style.css"> <!-- Подключение CSS-файла -->
@@ -24,57 +24,107 @@
 </head>
 
 <body>
-    <header style="padding: 20px;"> <!-- Шапка страницы -->
-        <img
-        src="images/Student_photo.jpg"
-        alt="Фото студента-разработчика"
-        width="150"
-        height="150"> <!-- Изображение студента-разработчика (меня) -->
-        
+    <header class="site-header" id="top"> <!-- Шапка страницы (Изменена) -->
+        <img src="images/Student_photo.jpg"
+            alt="Фото студента-разработчика"
+            width="150" height="150"> <!-- Изображение студента-разработчика (меня) -->
         <h1>Савоськин Николай</h1>
-        <h2>Студент-разработчик</h2>
+        <p class="subtitle">Студент-разработчик</p>
     </header>
+
+    <nav class="main-nav" aria-label="Основная навигация"> <!--Навигационное меню-->
+        <ul class="nav-list">
+            <li><a href="#skills">Навыки</a></li>
+            <li><a href="#projects">Проекты</a></li>
+            <li><a href="#gallery">Скриншоты</a></li>
+            <li><a href="#contact">Обратная связь</a></li>
+        </ul>
+    </nav>
 
     <main> <!-- Основной контент страницы -->
         
 
         <div class="content"> <!-- Создаём контейнеры, чтобы aside оказался сбоку -->
             <div class="sections">
-                <section> <!-- Секция с навыками -->
+                <section id="skills"> <!-- Секция с навыками -->
                     <h2>Навыки</h2>
                     <div class="skills-grid"> <!-- Теперь ввиде сетки -->
                         <div class="skill-card python-card">
                             <span class="top-badge">Top skill</span>
                             Python
                         </div>
-
                         <div class="skill-card">
                             C++
                         </div>
-
                         <div class="skill-card">
                             Pascal
                         </div>
-
                         <div class="skill-card">
-                            HTML
+                            HTML и CSS
                         </div>
                     </div>
                 </section>
 
-                <section> <!-- Секция с проектами -->
+                <section id="projects"> <!-- Секция с проектами -->
                     <h2>Проекты</h2>
-                    <ol class="projects-list"> <!-- Класс списка проектов -->
-                        <li> <!-- Была добавлена ссылка на первый проект -->
-                            Озвученная текстовая игра по миру Backrooms, основанная на нейросети
-                            <a href="https://character.ai/chat/-Nlr2Sc0JlWuCHXOHNiTb_YbW0WyeNtAT7BxFqwSK-M" target="_blank">Character.AI</a>
-                        </li>
-                        <li>Исследование лучшего места для организации "тёмной кухни" в Томске</li>
-                        <li>Создание своей базы данных в Oracle по предметной области "Радио"</li>
-                    </ol>
+                    <div class="projects-grid"> <!-- Класс проектов в виде карточек -->
+                        <article class="project-card">
+                            <div class="project-icon" aria-hidden="true">🎮</div>
+                            <div class="project-info">
+                                <h3>Текстовая игра Backrooms</h3>
+                                <p>Озвученная текстовая игра по миру Backrooms с использованием нейросети.</p>
+                                <p class="tech-stack"><strong>Технологии:</strong> Character.AI, Qwen</p>
+                                <a class="project-button"
+                                   href="https://character.ai/chat/-Nlr2Sc0JlWuCHXOHNiTb_YbW0WyeNtAT7BxFqwSK-M"
+                                   target="_blank" rel="noopener noreferrer">Подробнее</a>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-icon" aria-hidden="true">🗺️</div>
+                            <div class="project-info">
+                                <h3>Исследование для «тёмной кухни»</h3>
+                                <p>Поиск подходящего места для организации «тёмной кухни» в Томске.</p>
+                                <p class="tech-stack"><strong>Технологии:</strong> QGIS, картографические данные, ЦИАН</p>
+                                <a class="project-button" href="#gallery">Подробнее</a>
+                            </div>
+                        </article>
+
+                        <article class="project-card">
+                            <div class="project-icon" aria-hidden="true">📻</div>
+                            <div class="project-info">
+                                <h3>База данных «Радио»</h3>
+                                <p>Проектирование базы данных для предметной области радиовещания.</p>
+                                <p class="tech-stack"><strong>Технологии:</strong> Oracle, SQL, PL/SQL</p>
+                                <a class="project-button" href="#gallery">Подробнее</a>
+                            </div>
+                        </article>
+                    </div>
                 </section>
 
-                <section> <!-- Секция с формой обратной связи -->
+                <section id="gallery">
+                    <h2>Скриншоты проектов</h2>
+                    <div class="gallery-grid">
+                        <figure class="gallery-item">
+                            <img src="images/backrooms.jpg" alt="Скриншот текстовой игры Backrooms" loading="lazy">
+                            <figcaption>Текстовая игра Backrooms</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="images/kitchen-1.jpg" alt="Слайд из презентации по тёмной кухне" loading="lazy">
+                            <figcaption>Первый слайд по тёмной кухне</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="images/kitchen-2.jpg" alt="Результаты анализа локаций" loading="lazy">
+                            <figcaption>Результат анализа</figcaption>
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="images/radio-1.jpg" alt="Схема базы данных радиовещания" loading="lazy">
+                            <figcaption>ER-схема Чена базы данных</figcaption>
+                        </figure>
+                    </div>
+                </section>
+
+                <section id="contact"> <!-- Секция с формой обратной связи -->
                     <h2>Обратная связь</h2>
                     <form>
                         <label for="name">Имя:</label>
@@ -105,6 +155,7 @@
 
     <footer> <!-- Нижняя часть страницы -->
         <p>&copy; 2026 Савоськин Николай</p>
+        <a href="#top" class="back-to-top">Наверх ↑</a> <!--Ссылка возвращения к шапке-->
     </footer>
 </body>
 </html>
