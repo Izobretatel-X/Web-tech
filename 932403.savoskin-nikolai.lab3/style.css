@@ -277,7 +277,7 @@ section h3 {
 /* Grid: галерея скриншотов */
 .gallery-grid {
     display: grid; /*включает двумерную сетку*/
-    grid-template-columns: repeat(2, minmax(0, 1fr)); /*повторяет описание колонки два раза*/
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /*повторяет описание колонки три раза*/
     gap: 16px;
 }
 
@@ -427,18 +427,17 @@ footer p {
         padding: 18px 12px;
     }
 
-    section {
-        padding: 15px;
-    }
-
     .nav-list {
-        flex-direction: column;
-        align-items: stretch;
         gap: 4px;
+        padding: 8px;
     }
 
     .nav-list a {
-        text-align: center;
+        padding: 8px 10px;
+    }
+
+    section {
+        padding: 15px;
     }
 
     .skills-grid {
