@@ -23,13 +23,14 @@
     </style>
 </head>
 
-<body>
+<body class="theme-light"> <!-- Класс темы оформления (светлая / тёмная), переключается скриптом -->
     <header class="site-header" id="top"> <!-- Шапка страницы (Изменена) -->
         <img src="images/Student_photo.jpg"
             alt="Фото студента-разработчика"
             width="150" height="150"> <!-- Изображение студента-разработчика (меня) -->
         <h1>Савоськин Николай</h1>
         <p class="subtitle">Студент-разработчик</p>
+        <button type="button" id="theme-toggle-btn" class="theme-button">Тёмная тема</button> <!-- Кнопка переключения темы -->
     </header>
 
     <nav class="main-nav" aria-label="Основная навигация"> <!--Навигационное меню-->
@@ -67,7 +68,12 @@
 
                 <section id="projects"> <!-- Секция с проектами -->
                     <h2>Проекты</h2>
-                    <div class="projects-grid"> <!-- Класс проектов в виде карточек -->
+                    <div class="projects-controls"> <!-- Кнопки управления списком проектов -->
+                        <button type="button" id="add-project-btn">Добавить проект</button>
+                        <button type="button" id="remove-last-btn">Удалить последний</button>
+                        <button type="button" id="toggle-projects-btn">Свернуть проекты</button>
+                    </div>
+                    <div class="projects-grid" id="projects-list"> <!-- Класс проектов в виде карточек -->
                         <article class="project-card">
                             <div class="project-icon" aria-hidden="true">🎮</div>
                             <div class="project-info">
@@ -158,7 +164,7 @@
         <a href="#top" class="back-to-top">Наверх ↑</a> <!--Ссылка возвращения к шапке-->
     </footer>
 
-    <!-- Подключение JavaScript-файла с логикой лабораторной работы №4 -->
+    <!-- Подключение JavaScript-файла с логикой лабораторных работ №4 и №5 -->
     <script src="script.js"></script>
 </body>
 </html>

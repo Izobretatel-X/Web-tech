@@ -9,6 +9,7 @@
     --color-muted: #486581;
     --color-border: #7ea6d8;
     --color-focus: #0b3d91;
+    --color-heading: var(--color-accent); /* Цвет заголовков и текста карточек навыков (меняется в тёмной теме) */
     --font-main: Arial, sans-serif; /*Шрифт для всего документа*/
     --font-heading: Arial, sans-serif; /*Шрифт для заголовков*/
 }
@@ -31,6 +32,7 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.5;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавная смена темы */
 }
 
 img {
@@ -135,12 +137,12 @@ section {
 section h2,
 aside h2 {
     margin-top: 0;
-    color: var(--color-accent); /* Цвет заголовков секций и боковой панели */
+    color: var(--color-heading); /* Цвет заголовков секций и боковой панели */
 }
 
 section h3 {
     margin-top: 0;
-    color: var(--color-accent);
+    color: var(--color-heading);
 }
 
 /* Сетка для карточек навыков */
@@ -162,7 +164,7 @@ section h3 {
     background-color: var(--color-surface);
     border: 2px solid var(--color-primary); /* Цвет границы карточки навыка */
     border-radius: 12px;
-    color: var(--color-accent);
+    color: var(--color-heading);
     font-size: 1.1rem;
     font-weight: bold;
     text-align: center;
@@ -277,7 +279,7 @@ section h3 {
 /* Grid: галерея скриншотов */
 .gallery-grid {
     display: grid; /*включает двумерную сетку*/
-    grid-template-columns: repeat(3, minmax(0, 1fr)); /*повторяет описание колонки три раза*/
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /*повторяет описание колонки два раза*/
     gap: 16px;
 }
 
@@ -400,6 +402,40 @@ footer p {
     font-weight: bold;
 }
 
+/* Лабораторная работа №5: темы, кнопки управления и скрытие блока */
+
+/* Тёмная тема: переопределяет CSS-переменные, светлая тема использует значения из :root */
+body.theme-dark {
+    --color-background: #0b1522;
+    --color-surface: #14233a;
+    --color-secondary-surface: #1b2f4d;
+    --color-text: #e6eef9;
+    --color-muted: #9fb3c8;
+    --color-border: #3b5b86;
+    --color-primary: #1c55b8;
+    --color-focus: #7fb0ff;
+    --color-heading: #bcd7ff;
+}
+
+/* Кнопка переключения темы в шапке */
+.theme-button {
+    margin-top: 12px;
+    border: 2px solid var(--color-text-light);
+}
+
+/* Панель с кнопками управления проектами */
+.projects-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+/* Класс для скрытия и показа блока по клику */
+.hidden {
+    display: none !important;
+}
+
 /* Адаптивность */
 /* Планшеты: проекты и галерея (на случай, если бы было 6 скриншотов) по 2 колонки */
 @media (max-width: 950px) {
@@ -427,17 +463,18 @@ footer p {
         padding: 18px 12px;
     }
 
+    section {
+        padding: 15px;
+    }
+
     .nav-list {
+        flex-direction: column;
+        align-items: stretch;
         gap: 4px;
-        padding: 8px;
     }
 
     .nav-list a {
-        padding: 8px 10px;
-    }
-
-    section {
-        padding: 15px;
+        text-align: center;
     }
 
     .skills-grid {
