@@ -499,3 +499,13 @@ body.theme-dark {
         font-size: 1.7rem;
     }
 }
+
+/* Лабораторная работа №6: оформление страницы /about */
+section ul {
+    padding-left: 20px;
+}
+
+section a {
+    color: var(--color-primary);
+    font-weight: bold;
+}

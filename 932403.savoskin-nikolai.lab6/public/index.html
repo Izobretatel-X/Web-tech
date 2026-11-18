@@ -8,6 +8,11 @@
 
     <link rel="stylesheet" href="style.css"> <!-- Подключение CSS-файла -->
 
+    <link rel="manifest" href="manifest.json"> <!-- Манифест PWA: делает сайт устанавливаемым приложением -->
+    <meta name="theme-color" content="#0b3d91"> <!-- Цвет адресной строки в установленном приложении -->
+    <link rel="icon" href="icons/icon-192.png" type="image/png"> <!-- Иконка вкладки браузера -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png"> <!-- Иконка для устройств Apple -->
+
     <style>
         /* Внутреннее правило - специальное оформление поля Email */
         #email {
@@ -39,6 +44,7 @@
             <li><a href="#projects">Проекты</a></li>
             <li><a href="#gallery">Скриншоты</a></li>
             <li><a href="#contact">Обратная связь</a></li>
+            <li><a href="/about">О себе</a></li> <!-- Страница, которую отдаёт маршрут GET /about -->
         </ul>
     </nav>
 
@@ -166,5 +172,8 @@
 
     <!-- Подключение JavaScript-файла с логикой лабораторных работ №4 и №5 -->
     <script src="script.js"></script>
+
+    <!-- Регистрация service worker для кеширования и работы офлайн (лабораторная работа №6) -->
+    <script src="pwa.js"></script>
 </body>
 </html>

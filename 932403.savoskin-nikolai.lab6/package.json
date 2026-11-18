@@ -1,0 +1,13 @@
+{
+  "name": "lab6-express-pwa",
+  "version": "1.0.0",
+  "description": "Лабораторная работа №6. Node.js, Express и PWA (вариант 1: приветствие с локализацией)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

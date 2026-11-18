@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"> <!-- Настройка кодировки документа -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Правильное отображение на мобильных устройствах -->
+    <meta name="description" content="О студенте-разработчике Савоськине Николае."> <!--Метаописание-->
+    <title>О себе — Студент-разработчик</title> <!-- Название страницы -->
+
+    <link rel="manifest" href="manifest.json"> <!-- Манифест PWA -->
+    <meta name="theme-color" content="#0b3d91"> <!-- Цвет адресной строки в установленном приложении -->
+    <link rel="stylesheet" href="style.css"> <!-- Подключение CSS-файла -->
+</head>
+
+<body class="theme-light">
+    <header class="site-header"> <!-- Шапка страницы -->
+        <h1>О себе</h1>
+        <p class="subtitle">Савоськин Николай, студент-разработчик</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Обо мне</h2>
+            <p>Я студент-разработчик. Изучаю веб-технологии и программирование. Основные навыки: Python, C++, Pascal, HTML и CSS.</p>
+            <p><a href="/">← На главную</a></p>
+        </section>
+
+        <section>
+            <h2>API приветствия</h2>
+            <p>Примеры запросов к серверу (откроются в виде JSON):</p>
+            <ul>
+                <li><a href="/api/greet/Nikolay">/api/greet/Nikolay</a> — приветствие на английском</li>
+                <li><a href="/api/greet/Николай?lang=ru">/api/greet/Николай?lang=ru</a> — приветствие на русском</li>
+                <li><a href="/api/greet/Nik!">/api/greet/Nik!</a> — ошибка 400 (спецсимвол в имени)</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Регистрация service worker -->
+    <script src="pwa.js"></script>
+</body>
+</html>
